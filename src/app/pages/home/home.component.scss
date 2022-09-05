@@ -1,0 +1,33 @@
+.container {
+  justify-content: center;
+  align-content: center;
+  display: grid;
+}
+
+.child {
+  margin-top: 20px;
+  min-width: 320px;
+  overflow: scroll;
+  height: 80vh;
+  opacity: 0.85;
+}
+
+.main-card {
+  max-width: 400px;
+}
+
+.form-field {
+  width: 300px;
+}
+
+.loading-spinner {
+  justify-content: center;
+  display: grid;
+}
+
+@media (max-width: 400px) {
+  .child {
+    margin-top: 0px;
+    height: 100%;
+  }
+}

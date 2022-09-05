@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="child">
+    <mat-card class="main-card">
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" [(ngModel)]="value" />
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div *ngIf="isLoading" class="loading-spinner">
+        <mat-spinner color="warn"></mat-spinner>
+      </div>
+
+      <mat-card-content>
+        <mat-selection-list #foodListId [multiple]="false">
+          <mat-list-option *ngFor="let food of foodList | foodFilter: value" [value]="food">
+            {{ food }}
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
