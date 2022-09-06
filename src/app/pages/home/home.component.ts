@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BeersService } from 'src/app/services/beers.service';
+import { BeersService } from '../../services/beers.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   loadBeers() {
     this.isLoading = true;
-    return this.restApi.getEmployees().subscribe((data: []) => {
+    return this.restApi.getBeers().subscribe((data: []) => {
       this.handledResponse(data);
       this.isLoading = false;
     });

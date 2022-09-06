@@ -6,17 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FilterPipe } from './shared/filter.pipe';
+import { AngularMaterialModule } from './shared/angular-material.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, FilterPipe],
@@ -26,13 +20,7 @@ import { FilterPipe } from './shared/filter.pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatListModule,
-    MatInputModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -11,7 +11,7 @@ export class BeersService {
 
   constructor(private http: HttpClient) {}
 
-  getEmployees(): Observable<[]> {
+  getBeers(): Observable<[]> {
     return this.http.get<[]>(this.apiURL + '/beers').pipe(retry(1), catchError(this.handleError));
   }
 
