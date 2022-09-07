@@ -3,8 +3,8 @@
     <mat-card class="main-card">
       <mat-form-field class="form-field" appearance="fill">
         <mat-label>Search</mat-label>
-        <input matInput type="text" [(ngModel)]="value" />
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+        <input matInput type="text" [(ngModel)]="value" (input)="onSearchInput($event)" />
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>

@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'foodFilter' })
 export class FilterPipe implements PipeTransform {
-  transform(items: any[], value: string): any[] {
+  transform(items: string[], value: string): string[] {
     if (!items) {
       return [];
     }

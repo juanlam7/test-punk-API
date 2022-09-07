@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Ibeer } from '../shared/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +12,9 @@ export class BeersService {
 
   constructor(private http: HttpClient) {}
 
-  getBeers(): Observable<[]> {
-    return this.http.get<[]>(this.apiURL + '/beers').pipe(retry(1), catchError(this.handleError));
+  getBeersByFood(food: string = ''): Observable<Ibeer[]> {
+    const checkQueryParam: string = food.length > 0 ? `/beers?food=${food}` : '/beers';
+    return this.http.get<Ibeer[]>(this.apiURL + checkQueryParam).pipe(retry(1), catchError(this.handleError));
   }
 
   handleError(error: any) {

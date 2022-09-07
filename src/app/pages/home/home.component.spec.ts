@@ -36,7 +36,7 @@ describe('HomeComponent', () => {
         {
           provide: BeersService,
           useValue: {
-            getBeers() {
+            getBeersByFood() {
               return of(RESPONSE);
             },
           },
@@ -46,7 +46,7 @@ describe('HomeComponent', () => {
     }).compileComponents();
 
     service = TestBed.inject(BeersService);
-    jest.spyOn(service, 'getBeers');
+    jest.spyOn(service, 'getBeersByFood');
   });
 
   it('should create', waitForAsync(async () => {
